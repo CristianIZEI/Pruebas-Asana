@@ -1,0 +1,16 @@
+name: Move a task to a different section
+
+on:
+  pull_request:
+    types: [closed]
+
+jobs:
+  sync:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: everphone-gmbh/github-asana-action
+        if: github.event.pull_request.merged
+        with:
+          asana-pat: ${{ secrets.ASANA_PAT }}
+          action: 'move-section'
+          targets: '[{"project": "Pruebas Asana + Github", "section": "PRUEBAS"}]'
