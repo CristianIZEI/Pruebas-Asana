@@ -1,4 +1,4 @@
-name: Move a task to a different section
+name: Asana Github Actions
 
 on:
   pull_request:
