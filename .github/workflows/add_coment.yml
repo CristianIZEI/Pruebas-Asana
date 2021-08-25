@@ -10,9 +10,9 @@ jobs:
     steps:
       - name: set pr number
         run: echo "::set-env name=PR_NUMBER::$(echo -n "${GITHUB_REF}" | awk 'BEGIN { FS = "/" } ; { print $3 }')"
-      - uses: everphone-gmbh/github-asana-action
+      - uses: everphone-gmbh/github-asana-action@385529c13a4c0d311ac611ef4049f5a6ccf1048e
         with:
-          asana-pat: ${{ secrets.ASANA_PAT }}
+          asana-pat: ${{ secrets.ASANA_TOKEN }}
           action: 'add-comment'
           comment-id: "#pr:${{env.PR_NUMBER}}"
           text: 'View Pull Request: https://github.com/everphone-gmbh/frontend-symfony/pull/${{env.PR_NUMBER}}'
