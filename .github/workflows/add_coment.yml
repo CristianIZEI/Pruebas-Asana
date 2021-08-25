@@ -15,5 +15,5 @@ jobs:
           asana-pat: ${{ secrets.ASANA_TOKEN }}
           action: 'add-comment'
           comment-id: "#pr:2"
-          text: 'Estamos agregand un comentario desde un action'
+          text: 'Estamos agregando comentarios'
           is-pinned: true
